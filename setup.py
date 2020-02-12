@@ -1,18 +1,19 @@
 from setuptools import setup
+import io
 import os
 
 here = os.path.abspath(os.path.dirname(__file__))
 
 about = {}
-with open(
+with io.open(
     os.path.join(here, "airtable", "__version__.py"), mode="r", encoding="utf-8"
 ) as f:
     exec(f.read(), about)
 
-with open(os.path.join(here, "README.md"), mode="r", encoding="utf-8") as f:
+with io.open(os.path.join(here, "README.md"), mode="r", encoding="utf-8") as f:
     readme = f.read()
 
-with open(os.path.join(here, "HISTORY.md"), mode="r", encoding="utf-8") as f:
+with io.open(os.path.join(here, "HISTORY.md"), mode="r", encoding="utf-8") as f:
     history = f.read()
 
 setup_requires = ["pytest-runner"]
